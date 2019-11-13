@@ -1,0 +1,607 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:root{
+    --color-green: #00d66c;
+    --color-blue: #2800a0;
+}
+
+/* General */
+
+@font-face {
+    font-family: 'Nexa_Light';
+    src: url(webfonts/Nexa_Free_Light-webfont.woff)format('woff');
+}
+
+@font-face {
+    font-family: 'Nexa_Bold';
+    src: url(webfonts/Nexa_Free_Bold-webfont.woff) format('woff');
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%; /* Zet 1 rem als 10px */
+}
+
+body {
+    font-family: 'Nexa_Bold';
+    background-color: #F3E5D8;
+
+}
+
+p{
+    color: black;
+    font-family: 'Nexa_Light';
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+h1{
+    font-size: 7rem;
+    line-height: 7.3rem;
+    color: var(--color-blue);
+    margin-bottom: 3rem;
+}
+
+h2{
+    color: var(--color-blue);
+    font-family: 'Nexa_Bold';
+
+}
+
+h3{
+    color: var(--color-blue);
+    font-family: 'Nexa_Bold';
+    font-size: 2.5rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.responsive-image{
+    max-width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+/* Buttons */
+
+.btn{
+    appearance: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 300ms ease, color 300ms ease;
+    text-decoration: none;
+    font-family: 'Nexa_Bold';
+}
+.btn.btn-red{
+    background-color: #FF3268;
+    border: 2px solid #FF3268;
+    color: white;
+}
+.btn.btn-red:hover{
+    background: transparent;
+    color: #FF3268;
+}
+
+.btn.btn-big{
+    padding: 1.1rem 1rem 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 30px;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-group .btn+.btn{
+    margin-left: 15px;
+}
+
+
+
+
+/* Grid */
+
+.container-fluid{
+    width: 100%;
+    max-width: 1200px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.col{
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-6{
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-4{
+    -webkit-box-flex: 0;
+    flex: 0 0 33.333333333%;
+    max-width: 33.333333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+    .col-4{
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .col, .col-6, .col-4{
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    flex: 0 0 100%;
+    }
+}
+
+
+/* Nav / header */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 60px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+header .logo a img{
+    height: 40px;
+}
+
+header .logo a img:nth-child(2){
+    display: none;
+}
+
+header nav.main ul{
+    display: flex;
+    align-items: center;
+}
+
+header nav.main ul li{
+    padding: 1.5rem 1rem;
+}
+header nav.main ul li a{
+    color: var(--color-blue);
+    font-size: 2rem;
+    line-height: 2rem;
+    text-decoration: none;
+    transition: color 300ms ease;
+}
+header nav.main ul li a:hover{
+    color: var(--color-green);
+}
+
+
+@media only screen and (max-width: 768px) {
+    header .logo a img:nth-child(1){
+    display: none;
+    }
+    header .logo a img:nth-child(2){
+    display: block;
+    }
+}
+
+/* Intro section */
+
+section.intro-section{
+    padding: 21rem 0 15rem;
+    background: url("images/map-EU.png") no-repeat center right;
+    background-size: 55%;
+    position: relative;
+    background-color: white;
+}
+
+section.intro-section::after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 15px;
+    background-color: #fff;
+    transform: rotate(45deg) translateY(3rem);
+}
+
+section.intro-section .container{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+section.intro-section .text-holder{
+    max-width: 600px;
+    width: 100%;
+}
+
+section.intro-section .text-holder p{
+    font-size: 1.8rem;
+    line-height: 3rem;
+    color: black;
+    margin-bottom: 3rem;
+}
+
+
+@media only screen and (max-width: 991px) {
+    section.intro-section{
+    background: white;
+    height: 60rem;
+    }
+
+    section.intro-section .text-holder p{
+    display: none;
+    }
+
+    section.intro-section .text-holder h1{
+    margin-left: 3rem;
+    font-size: 6rem;
+    margin-bottom: 3rem;
+}
+    section.intro-section .text-holder a{
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+    section.intro-section{
+    background: white;
+    height: 50rem;
+    }
+
+
+    section.intro-section .text-holder{
+   margin-top: -4rem;
+    }
+    section.intro-section .text-holder p{
+        display: none;
+    }
+
+    section.intro-section .text-holder h1{
+    font-size: 5rem;
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+    section.intro-section .text-holder a{
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+}
+
+
+/* Styling blokken*/
+
+article {
+    background-color: #ffff;
+    border-radius: 30px;
+    padding: 2rem;
+    margin-top: 2rem;
+    margin: 1rem;
+    font-family: 'Nexa_Light';
+}
+
+article p:nth-of-type(1){
+    font-size:1.4rem;
+    font-family: 'Nexa_Bold';
+
+}
+article a{
+    margin-left:1.5rem;
+}
+
+
+/* Our-tops */
+
+section article .header-tops{
+    font-size: 4rem;
+    background-color: #00D66C;
+    padding: 4rem;
+    border-radius: 30px;
+    margin: -2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 900;
+}
+
+.col-4:nth-of-type(1) article .header-tops{
+    background-color: #00D66C;
+}
+
+.col-4:nth-of-type(2) article .header-tops{
+    background-color: #2900A0;
+}
+.col-4:nth-of-type(3) article .header-tops{
+    background-color: #FF3269;
+}
+
+section.our-tops{
+    padding: 5rem 0;
+}
+
+section.our-tops .section-title{
+    text-align: center;
+    font-size: 4rem;
+    color: var(--color-blue);
+    padding: 3rem;
+}
+
+
+@media only screen and (max-width: 991px) {
+.row .col-4:nth-child(3){
+   display: none;
+}
+}
+
+
+/* Sort section */  
+form{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+      border-radius: 30px;
+}
+
+form .container-fluid{
+    background-color:#fff;
+    border-radius: 30px;
+    margin: 0 auto;
+    
+}
+
+form .col{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+form legend{
+    font-family:"Nexa_Bold";
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+
+form ul li {
+    list-style: none;
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    font-family: "Nexa_Light";
+    padding-left: 2rem;
+
+}
+
+form a{
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
+
+input[type=search] {
+  border: 1px dotted #999;
+  width: 16rem;
+  border-radius: 30px;
+  padding:1rem;
+  margin-left: 2rem;
+  -webkit-appearance: none;
+}
+#panel h2 {
+    margin-top: 1em;
+    font-family: 'Nexa_Bold';
+    color: #2800A0;
+    font-size: 1.2em;
+    margin-bottom: .5em;
+    font-weight: normal;
+}
+
+#panel a {
+    margin: 1em;
+}
+
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+button#accordion {
+    cursor: pointer;
+    width: 100%;
+    transition: 0.4s;
+    font-family: Nexa_Bold;
+    font-size: 4rem;
+    background-color: #00D66C;
+    padding: 4rem;
+    border-radius: 30px;
+    margin-top: 0px;
+    color: #fff;
+    text-align: center;
+
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active,
+#accordion:hover {
+    background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default bron:*/
+
+.panel {
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+
+.col-3{
+    -webkit-box-flex: 0;
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media only screen and (max-width: 991px) {
+    .col-4, .col-3{
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    }
+    #clickme{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .col, .col-6, .col-4, .col-3{
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    flex: 0 0 100%;
+    flex-grow: 1;
+    max-width: 100%;
+    }
+    form a{
+    display: block;
+    margin:3rem;
+    margin-bottom: 4rem;
+}
+   #clickme{
+        display: none;
+    }
+}
+
+
+
+/* Latest posts*/
+
+section.latest-posts{
+    padding: 5rem 0;
+}
+
+section.latest-posts .container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+
+.like {
+    background-color: #ff3268;
+    box-shadow: inset 0 -.1875em .0625em #ab2649;
+    color: #fff;
+    border-style: none;
+    border-radius: 50%;
+    outline: none;
+    font-size: 1em;
+    margin-top: 1em;
+    height: 2em;
+    width: 2em;
+    transition: 300ms;
+    float: left;
+}
+
+.like:hover {
+    background-color: white;
+    color: #ff3268;
+}
+
+.like:active {
+    box-shadow: inset 0 .1875rem .0625rem #122452;
+    background-color: white;
+    color:  #ff3268;
+}

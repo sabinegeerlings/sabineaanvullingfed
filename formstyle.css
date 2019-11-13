@@ -1,0 +1,306 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+:root{
+    --color-green: #00d66c;
+    --color-blue: #2800a0;
+}
+/* Alles */
+
+@font-face {
+    font-family: 'Nexa_Light';
+    src: url(webfonts/Nexa_Free_Light-webfont.woff)format('woff');
+}
+
+@font-face {
+    font-family: 'Nexa_Bold';
+    src: url(webfonts/Nexa_Free_Bold-webfont.woff) format('woff');
+}
+
+body {
+    font-family: 'Nexa_Bold';
+    background-color: #F3E5D8;
+
+}
+
+p{
+    color: black;
+    font-family: 'Nexa_Light';
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+}
+
+h1{
+    font-size: 7rem;
+    line-height: 7.3rem;
+    color: var(--color-blue);
+    margin-bottom: 3rem;
+}
+
+h2{
+    color: var(--color-blue);
+    font-family: 'Nexa_Bold';
+
+}
+
+h3{
+    color: var(--color-blue);
+    font-family: 'Nexa_Bold';
+    font-size: 2.5rem;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+
+.btn{
+    width:5em;
+    appearance: none;
+    display: inline-block;
+    text-align: center;
+    transition: background 300ms ease, color 300ms ease;
+    text-decoration: none;
+    font-family: 'Nexa_Bold';
+    margin: 0.5em;
+
+
+}
+.btn.btn-red{
+    background-color: #FF3268;
+    border: 2px solid #FF3268;
+    color: white;
+}
+.btn.btn-red:hover{
+    background: transparent;
+    color: #FF3268;
+}
+
+.btn.btn-big{
+    padding: 10px;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 30px;
+}
+
+/* Nav / header */
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 60px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+header .logo a img{
+    height: 40px;
+}
+
+header .logo a img:nth-child(2){
+    display: none;
+}
+
+header nav.main ul{
+    display: flex;
+    align-items: center;
+}
+
+header nav.main ul li{
+    padding: 1.5rem 1rem;
+}
+header nav.main ul li a{
+    color: var(--color-blue);
+    font-size: 1rem;
+    line-height: 2rem;
+    text-decoration: none;
+    transition: color 300ms ease;
+}
+header nav.main ul li a:hover{
+    color: var(--color-green);
+}
+
+
+@media only screen and (max-width: 768px) {
+    header .logo a img:nth-child(1){
+        display: none;
+    }
+    header .logo a img:nth-child(2){
+        display: block;
+    }
+}
+
+main{
+    padding: 4em 4em 0 4em;
+
+}
+main section{
+    background-repeat: no-repeat;
+    height: 2em;
+    width: 100%;
+}
+
+
+form {
+  display:flex;
+  flex-direction:column;
+  transition: all .5s;
+  background: white;
+  border-radius: 30px;
+  margin-top: 2em;
+
+}
+label{
+    font-family: "Nexa_Bold";
+    font-size: 1em;
+    padding: 0.5em;
+  }
+
+fieldset {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-bottom: 1em;
+  border:none;
+  transition: all .2s;
+  padding:1rem 1.5rem 0 1rem ;
+}
+
+input {
+  padding:.25em;
+  font-size: 1.25em;
+  margin-bottom: 1em;
+  width:100%;
+  transition:all .2s;
+  z-index:2;
+}
+input:valid {
+  border: solid;
+  border-radius: 20px;
+  border-color: #00D66C;
+} 
+input:invalid {
+  border: solid;
+  border-color: #FF3268;
+  border-radius: 20px;
+ 
+}
+input:focus {
+  transform: scale(1.01, 1.01);
+  display:block;
+  opacity:1;
+  margin-top:-0.2em;
+}
+
+input::placeholder {
+  font-style:italic;
+}
+
+
+.titel{
+    cursor: pointer;
+    transition: 0.4s;
+    font-family: Nexa_Bold;
+    font-size: 3rem;
+    background-color: #00D66C;
+    padding: 4rem;
+    border-radius: 30px;
+    margin-top: 0px;
+    color: #fff;
+    text-align: center;
+}
+a{
+    margin: 1em;
+}
+
+/* Media querys Menu */
+
+@media (min-width: 30em) {
+ 
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        list-style: none ;
+        text-decoration: none;
+
+
+    }
+    
+    nav li {
+
+        text-align: center;
+        list-style: none;
+        text-decoration: none;
+        padding: 0em 4em 0 0;
+
+    }
+    
+}
+
+
+
+@media (min-width: 40em) {
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 1em;
+        margin-bottom: 2em;
+
+    }
