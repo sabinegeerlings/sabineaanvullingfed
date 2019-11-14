@@ -196,6 +196,9 @@ main section{
 }
 
 
+/* Form elementen bron inspiratie: https://codepen.io/joostf/pen/VKyPxk; */
+
+
 form {
   display:flex;
   flex-direction:column;
