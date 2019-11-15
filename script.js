@@ -3,7 +3,8 @@
 var list = ["Alzheimer","Blind","Vergezocht","Kinderboek"];
 
 $( "#clickme" ).click(function() {
-  //$("#displayme").html(list[Math.floor(Math.random()*list.length)]);
+  //De variable bevat een array, Hij pakt een random item uit de array doormiddel 
+  //van een random getal op basis van de lengte van de array.
   $('#mySearch').val(list[Math.floor(Math.random()*list.length)]);
 });
 
@@ -20,7 +21,7 @@ $( document ).ready(function() {
 
 /* 
 
-    Een "const" variable kan gebruikt worden in ES6 en hoger. 
+    Een "const" variable kan gebruikt worden in ES6, JS6 en hoger. 
     Het is hetzelfde als "var", maar wat je aan "const" 'assigned' kan je niet veranderen, omdat het CONSTant is.
     Dit heeft een groot pluspunt, en dat is de laadtijd veel sneller is!
 
@@ -40,10 +41,10 @@ $( document ).ready(function() {
     Als je in de site klikt op een element met het id "accordion", word deze klik functie uitgevoerd.
 
     Als erop geklikt wordt, word er eerst gekeken of de 
-    "inline style"* van het element met het id "panel" gelijk is aan "display: block", dus of het element zichtbaar is.
+    "inline style"* van het element met het id "panel" gelijk is aan "display: flex", dus of het element zichtbaar is.
     Als dat zo is laat het dan verdwijnen door de "inline style" te veranderen naar "display: none", dus ontzichtbaar.
 
-    Als het element geen "display: block" heeft, dus als het ontzichtbaar is geef het dan "display: block" om het te laten zien.
+    Als het element geen "display: flex" heeft, dus als het ontzichtbaar is geef het dan "display: flex" om het te laten zien.
 
     *styling dat gedevineerd is in het HTML bestand en niet in een css bestand of tussen "style tags" in de 'head'
 
@@ -189,7 +190,7 @@ $( document ).ready(function() {
 
 /* 
 
-    -- HET GESORTEREN MET DE KLIK FUNCTIE --
+    -- HET SORTEREN MET DE KLIK FUNCTIE --
 
     In de HTML heb ik in de opties van het "select" element elk optie een "value" gegeven.
     Deze "value" vraag ik op in de "if statement" in de "klik functie" met: $(".keuze").val().
@@ -209,7 +210,7 @@ $( document ).ready(function() {
     Zoals de naam al zegt het voorkomt (prevent) het normale (default) gedrag.
     
 
-    -- STYLING ZODAT HET GESOORTEERD WORDT --
+    -- STYLING ZODAT HET GESORTEERD WORDT --
 
     Flexbox heeft een "property" genaamd "order".
     Met "order" kan je de volgorde van elementen veranderen, 
